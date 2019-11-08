@@ -10,7 +10,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "KristalLogin"
   spec.ios.deployment_target = '12.0'
-  spec.version      = "0.0.2"
+  spec.version      = "0.0.3"
   spec.summary      = "KristalLogin lets offer seemless login experience"
   spec.license = { :type => "MIT", :file => "LICENSE" }
   spec.requires_arc = true
