@@ -18,7 +18,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Prince Mathew" => "prinzemathew@gmail.com" }
   spec.homepage     = "https://github.com/prinzemathew/KristalLogin"
   spec.source       = { :git => "https://github.com/prinzemathew/KristalLogin.git", :tag => "#{spec.version}" }
-  spec.source_files  = "KristalLogin/**/*.{swift}"
+  spec.source_files  = "KristalLogin/**/*"
   spec.exclude_files = "KristalLogin/**/*.plist"
   spec.swift_version = "4.2"
 
