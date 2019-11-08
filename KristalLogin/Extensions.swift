@@ -8,6 +8,7 @@
 
 import Foundation
 import CommonCrypto
+import UIKit
 
 extension Data {
     func sha256() -> String {
@@ -25,3 +26,16 @@ extension String {
         return data.sha256()
     }
 }
+
+extension UIView {
+    public func fixIn(_ view: UIView) -> Void{
+        self.translatesAutoresizingMaskIntoConstraints = false;
+        self.frame = view.frame;
+        view.addSubview(self);
+        NSLayoutConstraint(item: self, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .top, relatedBy: .equal, toItem: view, attribute: .top, multiplier: 1.0, constant: 0).isActive = true
+        NSLayoutConstraint(item: self, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1.0, constant: 0).isActive = true
+    }
+}
+

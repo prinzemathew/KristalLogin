@@ -55,23 +55,37 @@ public class LoginView: UIView {
         self.addSubview(view);
         textFieldUserName.text = ""
         textFieldPassword.text = ""
+        textFieldPassword.delegate = self
+        textFieldUserName.delegate = self
     }
     
     private func validateForm() -> (userName:String,password:String) {
         var userName: String = ""
         var password: String = ""
+        labelUsernameError.text = ""
+        labelPasswordError.text = ""
         if let _userName = textFieldUserName.text,
             _userName.count > 0 {
                 userName = _userName
         } else {
-            
+            labelUsernameError.text = "UserName field is empty"
         }
         if let _password = textFieldPassword.text,
             _password.count > 0 {
                 password = _password
         } else {
-            
+            labelPasswordError.text = "Password field is empty"
         }
         return (userName,password)
+    }
+}
+
+extension LoginView: UITextFieldDelegate {
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+        let validRegEx = "[^a-zA-Z0-9]"
+        return string.range(of: validRegEx, options: .regularExpression) == nil
     }
 }
