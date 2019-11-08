@@ -10,14 +10,14 @@ Pod::Spec.new do |spec|
 
   spec.name         = "KristalLogin"
   spec.ios.deployment_target = '12.0'
-  spec.version      = "0.0.3"
+  spec.version      = "1.0.0"
   spec.summary      = "KristalLogin lets offer seemless login experience"
   spec.license = { :type => "MIT", :file => "LICENSE" }
   spec.requires_arc = true
 
   spec.author             = { "Prince Mathew" => "prinzemathew@gmail.com" }
   spec.homepage     = "https://github.com/prinzemathew/KristalLogin"
-  spec.source       = { :git => "https://github.com/prinzemathew/KristalLogin.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/prinzemathew/KristalLogin.git", :tag => "1.0.0" }
   spec.source_files  = "KristalLogin/**/*"
   spec.exclude_files = "KristalLogin/**/*.plist"
   spec.swift_version = "4.2"
