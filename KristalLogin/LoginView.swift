@@ -47,8 +47,7 @@ public class LoginView: UIView {
     }
     
     private func loadViewFromNib() {
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: "LoginView", bundle: bundle)
+        let nib = UINib(nibName: "LoginView", bundle: Bundle(for: LoginView.self))
         view = nib.instantiate(withOwner: self, options: nil).first as? UIView
         self.translatesAutoresizingMaskIntoConstraints = false;
         view.frame = self.frame;
